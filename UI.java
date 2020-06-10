@@ -45,6 +45,14 @@ public class UI {
     private void printIntro(){
         System.out.println("***************************************************");
         System.out.println("Het is een mooie dag! Tijd om eens te gaan fietsen ");
+        System.out.println("Commandos: 'q': laat status fietser zien");
+        System.out.println("Commandos: 'w': fiets krijgt een platte band");
+        System.out.println("Commandos: 'e': repareer de fiets zelf");
+        System.out.println("Commandos: 'r': ga naar de fietsenmaker");
+        System.out.println("Commandos: 't': eet een mars voor extra conditie");
+        System.out.println("Commandos: 'y': pin 12 euro");
+        System.out.println("Commandos: 'enter': ga fietsen");
+        System.out.println("Commandos: 'stop': terug naar huis");
         System.out.println("***************************************************");
 
     }
