@@ -3,19 +3,20 @@ package com.miniopdrachtenqien;
 public class Fietser {
     Fiets fiets;
     String naam;
-    double conditie;
+    double conditie = 100;
     double portemonnee;
-    boolean fixBand;
-    int aantalKilometers;
+    int aantalKilometers = 0;
 
-    Fietser(String naam, double conditie, double portemonnee,int kilometers, Fiets fiets){
+    Fietser(String naam, double portemonnee){
         this.naam = naam;
-        this.conditie = conditie;
         this.portemonnee = portemonnee;
-        this.fiets = fiets;
-        this.aantalKilometers = kilometers;
 
     }
+    Fietser(Fiets fiets){
+        this.fiets = fiets;
+
+    }
+
 
     void fietsen(){
         this.aantalKilometers+=7;

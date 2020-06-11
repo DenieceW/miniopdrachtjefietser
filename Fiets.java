@@ -33,6 +33,6 @@ public class Fiets {
     @Override
     public String toString() {
         return "Deze fiets is een " + merknaam + " met de kleur " + kleur +
-                " van het model " + model + "." + heeftPlatteBand;
+                " van het model " + model + "." ;
     }
 }
