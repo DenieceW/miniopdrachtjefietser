@@ -35,8 +35,7 @@ public class UI {
                         fietser.eetMars();
                         break;
                     case "y":
-              //          fietser.geldOpnemen(12);
-                        pinGeld();
+                        fietser.pinGeld();
                         break;
                     case "stop":
                         System.out.println(fietser.naam + " is moe, en fiets terug naar huis.");
@@ -98,10 +97,4 @@ public class UI {
 
     }
 
-    private void pinGeld(){
-        System.out.print("Hoeveel geld wil je opnemen?: ");
-        int pinbedrag = Integer.parseInt(scanner.nextLine());
-        fietser.geldOpnemen(pinbedrag);
-
-    }
 }

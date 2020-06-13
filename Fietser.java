@@ -1,5 +1,7 @@
 package com.miniopdrachtenqien;
 
+import java.util.Scanner;
+
 public class Fietser {
     Fiets fiets;
     String naam;
@@ -22,7 +24,8 @@ public class Fietser {
         this.conditie -=Math.round(0.10 * this.conditie);
         System.out.println("*****" + naam + " gaat fietsen*****");
         if(fiets.heeftPlatteBand){
-            System.out.println("Je hebt een platte band gekregen.Type 'e' om de band zelf te maken. Type 'r' om naar de fietsenmaker te gaan.");
+            System.out.println("Je hebt een platte band gekregen.Type 'e' om de band zelf te maken." +
+                    " Type 'r' om naar de fietsenmaker te gaan.");
         }
     }
 
@@ -30,30 +33,50 @@ public class Fietser {
         if(this.conditie < 100) {
             this.conditie +=Math.round(0.20 * this.conditie);
         }
-        this.portemonnee -= 2;
-        System.out.println("*****" + naam + " koopt een mars voor extra conditie*****");
+        if (this.portemonnee < 2){
+            System.out.println("Je kunt geen mars kopen, je hebt te weinig geld, ga eerst pinnen.");
+        }else {
+            this.portemonnee -= 2;
+            System.out.println("*****" + naam + " koopt een mars voor extra conditie*****");
+        }
     }
 
-    double geldOpnemen(int bedrag){
+    int pinGeld(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Hoeveel geld wil je opnemen?: ");
+        int bedrag = Integer.parseInt(scanner.nextLine());
         geldOpnemenNotificatie(bedrag);
         return this.portemonnee+= bedrag;
     }
 
-    private void geldOpnemenNotificatie(double bedrag){
+
+    private void geldOpnemenNotificatie(int bedrag){
         System.out.println("*****" + naam + " heeft " + bedrag + " euro gepind en heeft nu " + (this.portemonnee + bedrag)
                 + " euro in de portemonnee*****");
     }
 
     void platteBandFixenZelf(){
-        this.conditie-=Math.round(0.20 * this.conditie);
-        fiets.platteBandGefixed();
-        System.out.println("*****" + naam + " fixt de band zelf, dit kost 20% van haar conditie*****");
+        if(fiets.heeftPlatteBand) {
+            this.conditie -= Math.round(0.20 * this.conditie);
+            fiets.platteBandGefixed();
+            System.out.println("*****" + naam + " fixt de band zelf, dit kost 20% van haar conditie*****");
+        }else {
+            System.out.println("Je hebt geen platte band");
+        }
     }
 
     void fietsenMaker(){
-        this.portemonnee-=10;
-        fiets.platteBandGefixed();
-        System.out.println("*****" + naam + " gaat naar de fietsenmaker om de band te fixen, dit kost 10 eurootjes*****");
+        if(fiets.heeftPlatteBand){
+            if(this.portemonnee < 10){
+                System.out.println("Je hebt te weinig geld voor de fietsenmaker, maak de band zelf");
+            }else {
+                this.portemonnee -= 10;
+                fiets.platteBandGefixed();
+                System.out.println("*****" + naam + " gaat naar de fietsenmaker om de band te fixen, dit kost 10 eurootjes*****");
+            }
+        }else {
+            System.out.println("Je hebt geen platte band!");
+        }
     }
 
     @Override
