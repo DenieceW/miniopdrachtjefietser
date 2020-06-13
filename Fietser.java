@@ -4,10 +4,10 @@ public class Fietser {
     Fiets fiets;
     String naam;
     double conditie = 100;
-    double portemonnee;
+    int portemonnee;
     int aantalKilometers = 0;
 
-    Fietser(String naam, double portemonnee){
+    Fietser(String naam, int portemonnee){
         this.naam = naam;
         this.portemonnee = portemonnee;
 
@@ -34,13 +34,14 @@ public class Fietser {
         System.out.println("*****" + naam + " koopt een mars voor extra conditie*****");
     }
 
-    double geldOpnemen(double bedrag){
+    double geldOpnemen(int bedrag){
         geldOpnemenNotificatie(bedrag);
         return this.portemonnee+= bedrag;
     }
 
     private void geldOpnemenNotificatie(double bedrag){
-        System.out.println("*****" + naam + " heeft " + bedrag + " euro gepind*****");
+        System.out.println("*****" + naam + " heeft " + bedrag + " euro gepind en heeft nu " + (this.portemonnee + bedrag)
+                + " euro in de portemonnee*****");
     }
 
     void platteBandFixenZelf(){
@@ -53,15 +54,6 @@ public class Fietser {
         this.portemonnee-=10;
         fiets.platteBandGefixed();
         System.out.println("*****" + naam + " gaat naar de fietsenmaker om de band te fixen, dit kost 10 eurootjes*****");
-    }
-
-    void conditieTeLaag() {
-        if(this.conditie > 10 && this.conditie < 15){
-            System.out.println("Je conditie is onder de 15%, eet een mars voordat je omvalt!");
-        }else if (this.conditie < 10){
-            System.out.println("Je conditie is lager dan 10% en je bent te moe om verder te fietsen!" +
-                    "Tijd om naar huis te gaan.");
-        }
     }
 
     @Override
