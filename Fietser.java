@@ -61,7 +61,7 @@ public class Fietser {
             fiets.platteBandGefixed();
             System.out.println("*****" + naam + " fixt de band zelf, dit kost 20% van haar conditie*****");
         }else {
-            System.out.println("Je hebt geen platte band");
+            System.out.println("Je hebt geen platte band!");
         }
     }
 
