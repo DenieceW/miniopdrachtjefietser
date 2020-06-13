@@ -12,9 +12,9 @@ public class Fietser {
         this.portemonnee = portemonnee;
 
     }
+    
     Fietser(Fiets fiets){
         this.fiets = fiets;
-
     }
 
     void fietsen(){
@@ -66,6 +66,5 @@ public class Fietser {
             return naam + " heeft een conditie van " + conditie + "% en heeft " + portemonnee + " euro op zak." + naam
                     + " heeft " + aantalKilometers + " kilometers gefietst." +
                     "Ze heeft geen platte band.";
-
     }
 }
