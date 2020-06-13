@@ -12,9 +12,9 @@ public class Fietser {
         this.portemonnee = portemonnee;
 
     }
+    
     Fietser(Fiets fiets){
         this.fiets = fiets;
-
     }
 
     void fietsen(){
@@ -55,15 +55,6 @@ public class Fietser {
         System.out.println("*****" + naam + " gaat naar de fietsenmaker om de band te fixen, dit kost 10 eurootjes*****");
     }
 
-    void conditieTeLaag() {
-        if(this.conditie > 10 && this.conditie < 15){
-            System.out.println("Je conditie is onder de 15%, eet een mars voordat je omvalt!");
-        }else if (this.conditie < 10){
-            System.out.println("Je conditie is lager dan 10% en je bent te moe om verder te fietsen!" +
-                    "Tijd om naar huis te gaan.");
-        }
-    }
-
     @Override
     public String toString() {
         if(fiets.heeftPlatteBand){
@@ -74,6 +65,5 @@ public class Fietser {
             return naam + " heeft een conditie van " + conditie + "% en heeft " + portemonnee + " euro op zak." + naam
                     + " heeft " + aantalKilometers + " kilometers gefietst." +
                     "Ze heeft geen platte band.";
-
     }
 }
