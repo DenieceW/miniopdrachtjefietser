@@ -17,11 +17,13 @@ public class Fietser {
 
     }
 
-
     void fietsen(){
         this.aantalKilometers+=7;
         this.conditie -=Math.round(0.10 * this.conditie);
         System.out.println("*****" + naam + " gaat fietsen*****");
+        if(fiets.heeftPlatteBand){
+            System.out.println("Je hebt een platte band gekregen.Type 'e' om de band zelf te maken. Type 'r' om naar de fietsenmaker te gaan.");
+        }
     }
 
     void eetMars(){
@@ -51,6 +53,15 @@ public class Fietser {
         this.portemonnee-=10;
         fiets.platteBandGefixed();
         System.out.println("*****" + naam + " gaat naar de fietsenmaker om de band te fixen, dit kost 10 eurootjes*****");
+    }
+
+    void conditieTeLaag() {
+        if(this.conditie > 10 && this.conditie < 15){
+            System.out.println("Je conditie is onder de 15%, eet een mars voordat je omvalt!");
+        }else if (this.conditie < 10){
+            System.out.println("Je conditie is lager dan 10% en je bent te moe om verder te fietsen!" +
+                    "Tijd om naar huis te gaan.");
+        }
     }
 
     @Override

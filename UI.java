@@ -44,6 +44,14 @@ public class UI {
                         fietser.fietsen();
                         break;
                 }
+
+                if(fietser.conditie > 10 && fietser.conditie < 15){
+                    System.out.println("Je conditie is onder de 15%, eet een mars (type 't') voordat je omvalt!");
+                }else if (fietser.conditie <= 10){
+                    System.out.println("Je conditie is lager dan 10% en je bent te moe om verder te fietsen!" +
+                            "Tijd om naar huis te gaan.");
+                    break;
+                }
             }
     }
 
