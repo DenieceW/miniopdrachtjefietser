@@ -57,16 +57,17 @@ public class UI {
 
     private void printIntro(){
         System.out.println("***************************************************");
-        System.out.println("Het is een mooie dag! Tijd om eens te gaan fietsen ");
-        System.out.println("Commandos: 'a': laat fiets zien");
-        System.out.println("Commandos: 'q': laat status fietser zien");
-        System.out.println("Commandos: 'w': fiets krijgt een platte band");
-        System.out.println("Commandos: 'e': repareer de fiets zelf");
-        System.out.println("Commandos: 'r': ga naar de fietsenmaker");
-        System.out.println("Commandos: 't': eet een mars voor extra conditie");
-        System.out.println("Commandos: 'y': pin 12 euro");
-        System.out.println("Commandos: 'enter': ga fietsen");
-        System.out.println("Commandos: 'stop': terug naar huis");
+        System.out.println("Het is een mooie dag! Tijd om eens te gaan fietsen. ");
+        System.out.println("Voer de letters in om diverse acties te doen.");
+        System.out.println("Invoer: 'a': laat fiets zien");
+        System.out.println("Invoer: 'q': laat status fietser zien");
+        System.out.println("Invoer: 'w': fiets krijgt een platte band");
+        System.out.println("Invoer: 'e': repareer de fiets zelf");
+        System.out.println("Invoer: 'r': ga naar de fietsenmaker");
+        System.out.println("Invoer: 't': eet een mars voor extra conditie");
+        System.out.println("Invoer: 'y': ga geld pinnen");
+        System.out.println("Invoer: 'enter': ga fietsen");
+        System.out.println("Invoer: 'stop': terug naar huis");
         System.out.println("***************************************************");
 
     }

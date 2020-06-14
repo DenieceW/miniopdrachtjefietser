@@ -32,10 +32,16 @@ public class Fietser {
     void eetMars(){
         if(this.conditie < 100) {
             this.conditie +=Math.round(0.20 * this.conditie);
+        }else if (this.conditie >= 100){
+            this.conditie = 100;
         }
         if (this.portemonnee < 2){
             System.out.println("Je kunt geen mars kopen, je hebt te weinig geld, ga eerst pinnen.");
-        }else {
+        }else if(this.conditie >= 100){
+            System.out.println("Jouw conditie is 100%, je hoeft geen mars te eten!");
+        }
+        else
+            {
             this.portemonnee -= 2;
             System.out.println("*****" + naam + " koopt een mars voor extra conditie*****");
         }
@@ -61,7 +67,7 @@ public class Fietser {
             fiets.platteBandGefixed();
             System.out.println("*****" + naam + " fixt de band zelf, dit kost 20% van haar conditie*****");
         }else {
-            System.out.println("Je hebt geen platte band");
+            System.out.println("Je hebt geen platte band!");
         }
     }
 
